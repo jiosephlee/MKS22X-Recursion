@@ -11,6 +11,7 @@ public class recursion{
             System.out.println(output.get(x));
         }
         System.out.println(" 4th term of fib is: " + fib(4));
+        System.out.println(" 5th term of fib is: " + fib(5));
     }
 
     public static double sqrt(double n, double tolerance){
@@ -47,6 +48,6 @@ public class recursion{
         if (n > 0){
             return helperC(n - 1, two, one + two);
         }
-        return two;
+        return one;
     }
 }
