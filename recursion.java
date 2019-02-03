@@ -5,8 +5,8 @@ public class recursion{
 
     public static void main(String[] args){
         System.out.println("square root of 16: " + sqrt(16.0,1));
-        System.out.println("all sums of n = 6");
-        ArrayList<Integer> output = makeAllSums(6);
+        System.out.println("all sums of n = 3");
+        ArrayList<Integer> output = makeAllSums(3);
         for (int x = 0; x < output.size(); x++){
             System.out.println(output.get(x));
         }
@@ -31,12 +31,11 @@ public class recursion{
 
     public static void helperB(int n, int sum, ArrayList<Integer> input){
         if (n > 0){
-            input.add(sum);
-            System.out.println("sequence: " + n);
             helperB(n-1,sum + n, input);
             helperB(n-1,sum,input);
-        }
+        }  else{
         input.add(sum);
+        }
     }
     public static int fib(int n){
         if (n == 0){
