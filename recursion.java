@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.lang.Math;
+
 public class recursion{
 
     public static void main(String[] args){
@@ -15,7 +17,7 @@ public class recursion{
         return helperA(n,1,tolerance);
     }
     public static double helperA(double n, double guess, double tolerance){
-        if ((n-guess)/n * 100 <= tolerance){
+        if (Math.abs((n - (guess * guess)))/n * 100 >= tolerance){
             return helperA(n , (n / guess + guess) / 2, tolerance);
         }
         return guess;
@@ -30,6 +32,7 @@ public class recursion{
     public static void helperB(int n, int sum, ArrayList<Integer> input){
         if (n > 0){
             input.add(sum);
+            System.out.println("sequence: " + n);
             helperB(n-1,sum + n, input);
             helperB(n-1,sum,input);
         }
