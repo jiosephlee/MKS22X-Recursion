@@ -5,8 +5,9 @@ public class recursion{
 
     public static void main(String[] args){
         System.out.println("square root of 16: " + sqrt(16.0,1));
-        System.out.println("all sums of n = 3");
-        ArrayList<Integer> output = makeAllSums(3);
+        System.out.println("square root of 0: " + sqrt(0,1));
+        System.out.println("all sums of n = 4");
+        ArrayList<Integer> output = makeAllSums(4);
         for (int x = 0; x < output.size(); x++){
             System.out.println(output.get(x));
         }
@@ -15,8 +16,12 @@ public class recursion{
     }
 
     public static double sqrt(double n, double tolerance){
+        if (n == 0){
+            return 0;
+        }
         return helperA(n,1,tolerance);
     }
+
     public static double helperA(double n, double guess, double tolerance){
         if (Math.abs((n - (guess * guess)))/n * 100 >= tolerance){
             return helperA(n , (n / guess + guess) / 2, tolerance);
